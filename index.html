@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Helen's Garden!</title>
+    <title>Helen's Garden</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
@@ -78,19 +78,28 @@
         <p1 data-aos="fade-down" data-aos-delay="200"><br></p1>
         <div class="gallery">
             <!-- <img data-aos="zoom-in-right" data-aos-delay="500" src="https://helen.pospirit.com/img/helen20200801-Enhanced-SR_2aw.jpg" alt="Helen7"> 링크주소를 s3로 바꾸어서 언제든 쉽게 변경하도록 함 -->
-            <img data-aos="zoom-out-right" data-aos-delay="300" src="https://happyynet.s3.us-east-2.amazonaws.com/img/IMG_7785bw.jpg" alt="Cornwall">
+            <!-- <img data-aos="zoom-out-right" data-aos-delay="300" src="https://happyynet.s3.us-east-2.amazonaws.com/img/IMG_7785bw.jpg" alt="Cornwall">
             <img data-aos="zoom-out-left" data-aos-delay="400" src="https://happyynet.s3.us-east-2.amazonaws.com/img/IMG_6545aw.jpg" alt="Wisley">
             <img data-aos="zoom-in-right" data-aos-delay="500" src="https://happyynet.s3.us-east-2.amazonaws.com/img/helen20200801-Enhanced-SR_2aw.jpg" alt="Helen7">
             <img data-aos="zoom-in-left" data-aos-delay="600" src="https://happyynet.s3.us-east-2.amazonaws.com/img/IMG_88611 w.jpg" alt="garden">
             <img data-aos="fade-right" data-aos-delay="700" src="https://happyynet.s3.us-east-2.amazonaws.com/img/IMG_88065w.jpg" alt="dawn">
             <img data-aos="fade-left" data-aos-delay="800" src="https://happyynet.s3.us-east-2.amazonaws.com/img/IMG_7885cw.jpg" alt="Jimin">
-            <img data-aos="zoom-in-right" data-aos-delay="900" src="https://happyynet.s3.us-east-2.amazonaws.com/img/IMG_5770 aw.jpg" alt="Helen5">
+            <img data-aos="zoom-in-right" data-aos-delay="900" src="https://happyynet.s3.us-east-2.amazonaws.com/img/IMG_5770 aw.jpg" alt="Helen5"> -->
+
+            <img data-aos="zoom-out-right" data-aos-delay="300" src="" alt="Random Image 1">
+            <img data-aos="zoom-out-left" data-aos-delay="400" src="" alt="Random Image 2">
+            <img data-aos="zoom-in-right" data-aos-delay="500" src="" alt="Random Image 3">
+            <img data-aos="zoom-in-left" data-aos-delay="600" src="" alt="Random Image 4">
+            <img data-aos="fade-right" data-aos-delay="700" src="" alt="Random Image 5">
+            <img data-aos="fade-left" data-aos-delay="800" src="" alt="Random Image 6">
+            <img data-aos="zoom-in-right" data-aos-delay="900" src="" alt="Random Image 7">
+
         </div>
         <p data-aos="fade-up" data-aos-delay="1000">Hello! I'm Helen, dedicated to providing the highest quality care and support to my patients. On my website, I share my personal experiences and stories as a health care assistant. I cherish each and every patient, and I am committed to continually striving to aid in their recovery.</p>
         
         <div class="navigation">
-            <p><a data-aos="fade-up" data-aos-delay="1100" href="https://helen.pospirit.com/main.html">Login</a></p>
-            <p><a data-aos="fade-up" data-aos-delay="1200" href="https://helen.pospirit.com/signup.html">Sign Up</a></p>
+            <p><a data-aos="fade-up" data-aos-delay="1100" href="https://happyy.net/main.html">Login</a></p>
+            <p><a data-aos="fade-up" data-aos-delay="1200" href="https://happyy.net/signup.html">Sign Up</a></p>
             <p1 data-aos="fade-down" data-aos-delay="1500"><br></p1>
         </div>
     </div>
@@ -102,5 +111,39 @@
           duration: 3000    // 숫자가 클수록 천천히, 숫자가 작을수록 빨리
         });
     </script>
+    
+
+    <script>
+        // 사진을 임의로 7개 가져오는 로직
+        // Array of image filenames (assuming they are in the "img" folder)
+        // const imageArray = ['1.jpg', '2.jpg', '3.jpg'];
+        const imageArray = [];
+        const totalItems = 10;
+
+        for (let i = 1; i <= totalItems; i++) {
+            imageArray.push(`${i}.jpg`);
+        }
+
+        // Now imageArray contains filenames from '1.jpg' to '100000.jpg'
+
+        // Get three random indices from the array
+        const randomIndices = [];
+        while (randomIndices.length < totalItems) {
+            const randomIndex = Math.floor(Math.random() * imageArray.length);
+            if (!randomIndices.includes(randomIndex)) {
+                randomIndices.push(randomIndex);
+            }
+        }
+
+        // Construct the image URLs
+        const imageUrls = randomIndices.map(index => `img/${imageArray[index]}`);
+
+        // Set the image sources
+        const imageElements = document.querySelectorAll('.gallery img');
+        imageElements.forEach((img, index) => {
+            img.src = imageUrls[index];
+        });
+    </script>
+
 </body>
 </html>
