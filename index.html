@@ -114,35 +114,51 @@
     
 
     <script>
-        // 사진을 임의로 7개 가져오는 로직
-        // Array of image filenames (assuming they are in the "img" folder)
-        // const imageArray = ['1.jpg', '2.jpg', '3.jpg'];
-        const imageArray = [];
-        const totalItems = 16;
-
-        for (let i = 1; i <= totalItems; i++) {
-            imageArray.push(`${i}.jpg`);
+      const imageUrls1to12 = [];
+      const imageUrls101to110 = [];
+      const numberOfImages1to12 = 16;
+      const numberOfImages101to110 = 10;
+  
+      for (let i = 1; i <= numberOfImages1to12; i++) {
+        imageUrls1to12.push(`img/${i}.jpg`);
+      }
+  
+      for (let i = 101; i <= numberOfImages101to110 + 100; i++) {
+        imageUrls101to110.push(`img/${i}.jpg`);
+      }
+  
+      function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+  
+      function displayRandomImages() {
+        const chosenImages = new Set(); // Use a Set to store chosen indexes
+  
+        while (chosenImages.size < 7) {
+          let randomIndex;
+          let imageUrls;
+  
+          if (chosenImages.size < 6) {
+            imageUrls = imageUrls1to12;
+          } else {
+            imageUrls = imageUrls101to110;
+          }
+  
+          do {
+            randomIndex = getRandomInt(0, imageUrls.length - 1);
+            console.log("randomIndex is",randomIndex);
+          } while (chosenImages.has(randomIndex));
+  
+          chosenImages.add(randomIndex);
+          document.querySelectorAll(".gallery img")[chosenImages.size - 1].src = imageUrls[randomIndex];
+          
+          console.log("while chosenImage.size is ",chosenImages.size,"randomIndex is ",randomIndex,"imageUrl is ",imageUrls[randomIndex]);
         }
-
-        // Now imageArray contains filenames from '1.jpg' to '100000.jpg'
-
-        // Get three random indices from the array
-        const randomIndices = [];
-        while (randomIndices.length < totalItems) {
-            const randomIndex = Math.floor(Math.random() * imageArray.length);
-            if (!randomIndices.includes(randomIndex)) {
-                randomIndices.push(randomIndex);
-            }
-        }
-
-        // Construct the image URLs
-        const imageUrls = randomIndices.map(index => `img/${imageArray[index]}`);
-
-        // Set the image sources
-        const imageElements = document.querySelectorAll('.gallery img');
-        imageElements.forEach((img, index) => {
-            img.src = imageUrls[index];
-        });
+      }
+  
+      displayRandomImages();
     </script>
 
 </body>
