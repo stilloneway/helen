@@ -32,14 +32,11 @@
             /*             margin-bottom: 500px; */
         }
         h3 {
-            font-family: "Shadows Into Light", cursive;
-            font-size: 2.5em;
+            font-family: "Roboto", sans-serif;
+            font-size: 4.5em;
             color: #444;
-            /*             margin-top: 500px; */
-                        margin-bottom: 10px;
-            /*             margin-bottom: 500px; */
+            margin-bottom: 10px;
         }
-
         p {
             font-size: 1.2em;
             line-height: 1.6em;
@@ -73,9 +70,10 @@
 </head>
 <body>
     <div class="container">
-        <h3 data-aos="fade-down">Helen</h3>
+        <!-- <h3 data-aos="fade-down">H e l e n</h3> -->
+        <img src="img/logohelen1ew.png" alt="Logo Helen">
         <h2 data-aos="fade-down" data-aos-delay="100">Stories of a Dedicated Health Care Assistant Helen</h2>
-        <p1 data-aos="fade-down" data-aos-delay="200"><br></p1>
+        <p data-aos="fade-down" data-aos-delay="200"><br></p>
         <div class="gallery">
             <!-- <img data-aos="zoom-in-right" data-aos-delay="500" src="https://helen.pospirit.com/img/helen20200801-Enhanced-SR_2aw.jpg" alt="Helen7"> 링크주소를 s3로 바꾸어서 언제든 쉽게 변경하도록 함 -->
             <!-- <img data-aos="zoom-out-right" data-aos-delay="300" src="https://happyynet.s3.us-east-2.amazonaws.com/img/IMG_7785bw.jpg" alt="Cornwall">
@@ -114,17 +112,17 @@
     
 
     <script>
-      const imageUrls1to12 = [];
-      const imageUrls101to110 = [];
-      const numberOfImages1to12 = 27;      // main photo 갯수를 입력하세요
-      const numberOfImages101to110 = 26;   // sub photo 갯수를 입력하세요 ***
+      const imageUrlsMain = [];
+      const imageUrlsSub = [];
+      const numberOfImagesMain = 27;      // main photo 갯수를 입력하세요
+      const numberOfImagesSub = 26;   // sub photo 갯수를 입력하세요 ***
   
-      for (let i = 1; i <= numberOfImages1to12; i++) {
-        imageUrls1to12.push(`img/${i}.jpg`);
+      for (let i = 1; i <= numberOfImagesMain; i++) {
+        imageUrlsMain.push(`img/${i}.jpg`);
       }
   
-      for (let i = 101; i <= numberOfImages101to110 + 100; i++) {
-        imageUrls101to110.push(`img/${i}.jpg`);
+      for (let i = 101; i <= numberOfImagesSub + 100; i++) {
+        imageUrlsSub.push(`img/${i}.jpg`);
       }
   
       function getRandomInt(min, max) {
@@ -141,9 +139,9 @@
           let imageUrls;
   
           if (chosenImages.size < 6) {
-            imageUrls = imageUrls1to12;
+            imageUrls = imageUrlsMain;
           } else {
-            imageUrls = imageUrls101to110;
+            imageUrls = imageUrlsSub;
           }
   
           do {
