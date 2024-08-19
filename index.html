@@ -7,7 +7,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
     <style>
+        html{
+          scroll-behavior: smooth;
+        }
         body {
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
@@ -48,13 +52,13 @@
         .navigation a {
             text-decoration: none;
             color: white;
-            background-color: #007BFF;
+            background-color: #ADD8E6;
             padding: 10px 20px;
             margin: 10px;
             border-radius: 5px;
         }
         .navigation a:hover {
-            background-color: #0056b3;
+            background-color: #6495ED;
         }
         .container img {
             width: 65%;
@@ -73,13 +77,38 @@
         .gallery img:first-of-type {
             margin-top: 0;
         }
+        section{
+          width: 100%;
+          height: 530vh;  /* this is background image scroll height */
+          background: url(img/1060background.jpg);   /* no-repeat; */
+          background-repeat: repeat-x;
+          background-size: cover;
+          background-attachment: fixed;
+        }
+        .gotopbtn{
+          position: fixed;
+          width: 40px;
+          height: 40px;
+          background: #4682B4;
+          bottom: 20px;
+          right: 20px;
+          text-decoration: none;
+          text-align: center;
+          line-height: 50px;
+          color: white;
+          font-size: 22px;
+        }
     </style>
 </head>
 <body>
+  <section>
     <div class="container">
+
         <!-- <h3 data-aos="fade-down">H e l e n</h3> -->
         <!-- <img src="img/logohelen1ew.png" alt="Logo Helen"> -->
-        <img data-aos="fade-down" src="img/logohelen1ew.png" alt="Logo Helen">
+        <a href="https://happyy.net">
+            <img data-aos="fade-down" src="img/logohelen1ey.png" alt="Logo Helen">
+        </a>
         <h2 data-aos="fade-left" data-aos-delay="100">Stories of a Dedicated Health Care Assistant Helen</h2>
         <p data-aos="fade-down" data-aos-delay="200"><br></p>
         <div class="gallery">
@@ -101,20 +130,32 @@
             <img data-aos="zoom-in-right" data-aos-delay="900" src="" alt="Random Image 7">
 
         </div>
+        <br>
+        
         <p data-aos="fade-up" data-aos-delay="1000">Hello! I'm Helen, dedicated to providing the highest quality care and support to my patients. On my website, I share my personal experiences and stories as a health care assistant. I cherish each and every patient, and I am committed to continually striving to aid in their recovery.</p>
         
         <div class="navigation">
-            <p><a data-aos="fade-up" data-aos-delay="1100" href="https://happyy.net/main.html">Login</a></p>
-            <p><a data-aos="fade-up" data-aos-delay="1200" href="https://happyy.net/signup.html">Sign Up</a></p>
-            <p1 data-aos="fade-down" data-aos-delay="1500"><br></p1>
+            <!-- <p><a data-aos="fade-left" data-aos-delay="1100" href="https://happyy.net/main.html">Login</a></p>
+            <p><a data-aos="fade-right" data-aos-delay="1200" href="https://happyy.net/signup.html">Sign Up</a></p> -->
+            <br>
+            <p><a href="https://happyy.net/main.html">Login</a></p>
+            <p><a href="https://happyy.net/signup.html">Sign Up</a></p>
+            <img data-aos="fade-left" src="img/logohelen1ey.png" alt="Logo Helen">
+            <br>
         </div>
     </div>
+    <a class="gotopbtn" href="#"> <i class="fa-solid fa-up-long"></i> </a>
+  </section>  
+
+
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
         // AOS.init();
         AOS.init({
           duration: 3000    // 숫자가 클수록 천천히, 숫자가 작을수록 빨리
+          // once: true   // 한번만 animation
         });
     </script>
     
