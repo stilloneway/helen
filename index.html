@@ -9,8 +9,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
     <style>
-        html{
+        html {
           scroll-behavior: smooth;
+          overflow-x: hidden;  /*  Hide horizontal scrollbar  ← → */
         }
         body {
             font-family: Arial, sans-serif;
@@ -19,10 +20,18 @@
             margin: 0;
             padding: 0;
         }
+        section {
+          width: 100%;
+          height: 530vh;  /* this is background image scroll height */
+          background: url(img/1060background.jpg);   /* no-repeat; */
+          /* background-repeat: repeat-x; */
+          background-size: cover;
+          background-attachment: fixed;
+        }
         .container {
-            max-width: 800px;
+            max-width: 800px;   /* 최대 사진 폭 */
             margin: 0 auto;
-            padding: 20px;
+            padding: 10px;   /* 옆 여백 */
             text-align: center;
         }
         h1 {
@@ -76,14 +85,6 @@
         }
         .gallery img:first-of-type {
             margin-top: 0;
-        }
-        section{
-          width: 100%;
-          height: 530vh;  /* this is background image scroll height */
-          background: url(img/1060background.jpg);   /* no-repeat; */
-          background-repeat: repeat-x;
-          background-size: cover;
-          background-attachment: fixed;
         }
         .gotopbtn{
           position: fixed;
