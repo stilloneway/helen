@@ -19,14 +19,15 @@
             color: #707070;
             margin: 0;
             padding: 0;
+            width: 100%;
+            height: 530vh;  /* this is background image scroll height */
+            background: url(img/1060background.jpg);   /* no-repeat; */
+            /* background-repeat: repeat-x; */
+            background-size: cover;
+            background-attachment: fixed;
         }
         section {
-          width: 100%;
-          height: 530vh;  /* this is background image scroll height */
-          background: url(img/1060background.jpg);   /* no-repeat; */
-          /* background-repeat: repeat-x; */
-          background-size: cover;
-          background-attachment: fixed;
+            /* moved to body  */
         }
         .container {
             max-width: 800px;   /* 최대 사진 폭 */
