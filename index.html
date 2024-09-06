@@ -12,26 +12,52 @@
         html {
           scroll-behavior: smooth;
           overflow-x: hidden;  /*  Hide horizontal scrollbar  ← → */
+          box-sizing: border-box; /* 패딩을 포함한 너비 계산 */
         }
         body {
-            font-family: Arial, sans-serif;
+            font-family: "Roboto", sans-serif;
             background-color: #f0f0f0;
             color: #707070;
             margin: 0;
             padding: 0;
             width: 100%;
-            height: 530vh;  /* this is background image scroll height */
-            background: url(img/1060background.jpg);   /* no-repeat; */
-            /* background-repeat: repeat-x; */
+            height: 100%;
+            overflow: hidden; /* Prevent scrollbars during animation */
+            position: relative; /* For positioning pseudo-element */
+        }
+        /* Pseudo-element for background image with fade-in animation */
+        body::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* height: 530vh;   this is background image scroll height */
+            /* background: url(img/1060background.jpg);  */
+            background: url('img/1060background.jpg') no-repeat center center fixed;
             background-size: cover;
-            background-attachment: fixed;
+            /* background-attachment: fixed; */
+            /* background-color: rgba(255, 255, 255, 0.8);  반투명 흰색 오버레이, 이미 배경그림을 흰색으로 lightness를 높였으므로 제외*/
+            z-index: -1; /* Ensure the background is behind all content */
+            opacity: 0; /* Start hidden */
+            animation: fadeInBackground 3s forwards; /* Apply fade-in animation 배경화면 3초 로딩 */
+        }
+        @keyframes fadeInBackground {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
         section {
             /* moved to body  */
         }
         .container {
-            max-width: 800px;   /* 최대 사진 폭 */
-            margin: 0 auto;
+            max-width: 800px;  /* 최대 사진 폭 */
+            /* max-width: 100%; */
+            margin: auto;
             padding: 10px;   /* 옆 여백 */
             text-align: center;
         }
@@ -57,15 +83,19 @@
             margin-bottom: 20px;
         }
         .navigation {
+            display: flex;
+            justify-content: center;
             margin-top: 20px;
+            gap: 10px; /* 링크 사이 간격 조정 */
         }
         .navigation a {
             text-decoration: none;
             color: white;
             background-color: #ADD8E6;
             padding: 10px 20px;
-            margin: 10px;
+            /* margin: 10px; */
             border-radius: 5px;
+            transition: background-color 0.3s ease; /* 부드러운 호버 효과 */
         }
         .navigation a:hover {
             background-color: #6495ED;
@@ -96,14 +126,23 @@
           right: 20px;
           text-decoration: none;
           text-align: center;
-          line-height: 50px;
+          line-height: 40px;
           color: white;
           font-size: 22px;
+          z-index: 100; /* 다른 요소 위에 표시 */
+        }
+        @media (max-width: 600px) {   /* 600px 이하 작은 화면에서는 톱버튼 크기를 작게, 왜냐하면 이미지를 가리니까   */
+          .gotopbtn {
+              width: 30px;
+              height: 30px;
+              font-size: 16px;
+              line-height: 30px;
+          }
         }
     </style>
 </head>
 <body>
-  <section>
+  <!-- <section> -->
     <div class="container">
 
         <!-- <h3 data-aos="fade-down">H e l e n</h3> -->
@@ -142,22 +181,21 @@
             <br>
             <p><a href="https://happyy.net/main.html">Login</a></p>
             <p><a href="https://happyy.net/signup.html">Sign Up</a></p>
-            <img data-aos="fade-left" src="img/logohelen1ey.png" alt="Logo Helen">
             <br>
         </div>
+        <a href="https://happyy.net">
+          <img data-aos="fade-left" src="img/logohelen1ey.png" alt="Logo Helen">
+        </a>
     </div>
     <a class="gotopbtn" href="#"> <i class="fa-solid fa-up-long"></i> </a>
-  </section>  
-
-
-
+  <!-- </section>   -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
         // AOS.init();
         AOS.init({
-          duration: 3000    // 숫자가 클수록 천천히, 숫자가 작을수록 빨리
-          // once: true   // 한번만 animation
+          duration: 3000,    // 숫자가 클수록 천천히, 숫자가 작을수록 빨리
+          once: true   // 한번만 animation
         });
     </script>
     
