@@ -57,8 +57,10 @@
         .container {
             max-width: 800px;  /* 최대 사진 폭 */
             /* max-width: 100%; */
-            margin: auto;
-            padding: 10px;   /* 옆 여백 */
+            margin: auto; /* 왼쪽과 오른쪽 여백을 동일하게 맞추는 가운데 정렬 */
+            margin-top: 20px;
+            margin-bottom: 20px;
+            padding: 10px;  /* 옆 여백 */
             text-align: center;
         }
         h1 {
@@ -102,20 +104,24 @@
         }
         .container img {
             width: 65%;
-            height: auto;
-            margin-top: 20px;
+            /* height: auto; */
+            /* margin-top: 20px; */
             /* border-radius: 10px; */
             /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
         }
         .gallery img {
             width: 100%;
-            height: auto;
-            margin-top: 20px;
+            /* height: auto; */
+            /* margin: 50px 10px 50px 10px; */
+            /* padding: 50px 10px 50px 10px; */
+            margin-top: 70px;
+            margin-bottom: 70px;
+            padding: 2px 2px 2px 2px;  /* 왼쪽과 오른쪽 여백은 마진을 사용하지 말고 패딩을 사용해야 모바일 환경 등 해상도가 다른 환경에서 화면이 잘리지 않음 */
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         .gallery img:first-of-type {
-            margin-top: 0;
+            /* margin-top: 0; */
         }
         .gotopbtn{
           position: fixed;
@@ -151,7 +157,7 @@
             <img data-aos="fade-down" src="img/logohelen1ey.png" alt="Logo Helen">
         </a>
         <h2 data-aos="fade-left" data-aos-delay="100">Stories of a Dedicated Health Care Assistant Helen</h2>
-        <p data-aos="fade-down" data-aos-delay="200"><br></p>
+        <!-- <p data-aos="fade-down" data-aos-delay="200"><br></p> -->
         <div class="gallery">
             <!-- <img data-aos="zoom-in-right" data-aos-delay="500" src="https://helen.pospirit.com/img/helen20200801-Enhanced-SR_2aw.jpg" alt="Helen7"> 링크주소를 s3로 바꾸어서 언제든 쉽게 변경하도록 함 -->
             <!-- <img data-aos="zoom-out-right" data-aos-delay="300" src="https://happyynet.s3.us-east-2.amazonaws.com/img/IMG_7785bw.jpg" alt="Cornwall">
@@ -171,14 +177,13 @@
             <img data-aos="zoom-in-right" data-aos-delay="900" src="" alt="Random Image 7">
 
         </div>
-        <br>
         
         <p data-aos="fade-up" data-aos-delay="1000">Hello! I'm Helen, dedicated to providing the highest quality care and support to my patients. On my website, I share my personal experiences and stories as a health care assistant. I cherish each and every patient, and I am committed to continually striving to aid in their recovery.</p>
         
         <div class="navigation">
             <!-- <p><a data-aos="fade-left" data-aos-delay="1100" href="https://happyy.net/main.html">Login</a></p>
-            <p><a data-aos="fade-right" data-aos-delay="1200" href="https://happyy.net/signup.html">Sign Up</a></p> -->
-            <br>
+            <p><a data-aos="fade-right" data-aos-delay="1200" href="https://happyy.net/signup.html">Sign Up</a></p>
+            <br> -->
             <p><a href="https://happyy.net/main.html">Login</a></p>
             <p><a href="https://happyy.net/signup.html">Sign Up</a></p>
             <br>
